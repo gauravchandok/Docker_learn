@@ -1,0 +1,2540 @@
+Last login: Sat Sep 21 02:18:55 on console
+Gauravs-MacBook-Pro-2:~ calel9$ pwd
+/Users/calel9
+Gauravs-MacBook-Pro-2:~ calel9$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures	anaconda
+Gauravs-MacBook-Pro-2:~ calel9$ cd Documents/
+Gauravs-MacBook-Pro-2:Documents calel9$ pwd
+/Users/calel9/Documents
+Gauravs-MacBook-Pro-2:Documents calel9$ ls
+Github				img20181116_16445552.pdf
+Liverpool			img20181116_16473051.pdf
+Python				img20181116_17000664.pdf
+Sports Interactive		img20181116_17012019.pdf
+WebEx				img20181116_17042795.pdf
+img20181116_16383650.pdf	untitled folder
+Gauravs-MacBook-Pro-2:Documents calel9$ cd Github/
+Gauravs-MacBook-Pro-2:Github calel9$ ls
+Titanic
+Gauravs-MacBook-Pro-2:Github calel9$ mkdir Docker
+Gauravs-MacBook-Pro-2:Github calel9$ ls
+Docker	Titanic
+Gauravs-MacBook-Pro-2:Github calel9$ ls
+Docker	Titanic
+Gauravs-MacBook-Pro-2:Github calel9$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete 
+Digest: sha256:c3b4ada4687bbaa170745b3e4dd8ac3f194ca95b2d0518b417fb47e5879d9b5f
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+Gauravs-MacBook-Pro-2:Github calel9$ docker
+
+Usage:	docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "/Users/calel9/.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "/Users/calel9/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "/Users/calel9/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "/Users/calel9/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+Gauravs-MacBook-Pro-2:Github calel9$ docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+7c9d20b9b6cd: Pull complete 
+Digest: sha256:fe301db49df08c384001ed752dff6d52b4305a73a7f608f21528048e8a08b51e
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+Gauravs-MacBook-Pro-2:Github calel9$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+busybox             latest              19485c79a9bb        6 weeks ago         1.22MB
+hello-world         latest              fce289e99eb9        9 months ago        1.84kB
+Gauravs-MacBook-Pro-2:Github calel9$ docker run busybox
+Gauravs-MacBook-Pro-2:Github calel9$ docker run busybox echo "hello from busybox"
+hello from busybox
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS               NAMES
+5ef2084d2f5c        busybox             "echo 'hello from bu…"   4 minutes ago       Exited (0) 4 minutes ago                           stupefied_dijkstra
+7b8144aa5fb1        busybox             "sh"                     5 minutes ago       Exited (0) 5 minutes ago                           hopeful_jackson
+28b483d0c16d        hello-world         "/hello"                 About an hour ago   Exited (0) About an hour ago                       eloquent_pike
+Gauravs-MacBook-Pro-2:Github calel9$ docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Gauravs-MacBook-Pro-2:Github calel9$ docker -a
+unknown shorthand flag: 'a' in -a
+See 'docker --help'.
+
+Usage:	docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/Users/calel9/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker
+                           context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/Users/calel9/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/Users/calel9/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/Users/calel9/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+Gauravs-MacBook-Pro-2:Github calel9$ docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+Gauravs-MacBook-Pro-2:Github calel9$ docker log busybox
+docker: 'log' is not a docker command.
+See 'docker --help'
+Gauravs-MacBook-Pro-2:Github calel9$ docker logs busybox
+Error: No such container: busybox
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+5ef2084d2f5c        busybox             "echo 'hello from bu…"   31 minutes ago      Exited (0) 30 minutes ago                       stupefied_dijkstra
+7b8144aa5fb1        busybox             "sh"                     31 minutes ago      Exited (0) 31 minutes ago                       hopeful_jackson
+28b483d0c16d        hello-world         "/hello"                 2 hours ago         Exited (0) 2 hours ago                          eloquent_pike
+Gauravs-MacBook-Pro-2:Github calel9$ docker run -it busybox sh
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+/ # uptime
+ 19:52:31 up  2:13,  0 users,  load average: 0.00, 0.01, 0.00
+/ # pwd
+/
+/ # rm -rf bin
+/ # ls
+sh: ls: not found
+/ # uptime
+sh: uptime: not found
+/ # exit
+Gauravs-MacBook-Pro-2:Github calel9$ docker run -it busybox sh
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+/ # w
+USER		TTY		IDLE	TIME		 HOST
+/ # df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+overlay               61255492   1105004  57009164   2% /
+tmpfs                    65536         0     65536   0% /dev
+tmpfs                  1023564         0   1023564   0% /sys/fs/cgroup
+shm                      65536         0     65536   0% /dev/shm
+/dev/sda1             61255492   1105004  57009164   2% /etc/resolv.conf
+/dev/sda1             61255492   1105004  57009164   2% /etc/hostname
+/dev/sda1             61255492   1105004  57009164   2% /etc/hosts
+tmpfs                  1023564         0   1023564   0% /proc/acpi
+tmpfs                    65536         0     65536   0% /proc/kcore
+tmpfs                    65536         0     65536   0% /proc/keys
+tmpfs                    65536         0     65536   0% /proc/timer_list
+tmpfs                    65536         0     65536   0% /proc/sched_debug
+tmpfs                  1023564         0   1023564   0% /sys/firmware
+/ # which aoo
+/ # which app
+/ # du
+4	./usr/sbin
+8	./usr
+4	./etc/network/if-pre-up.d
+4	./etc/network/if-up.d
+4	./etc/network/if-down.d
+4	./etc/network/if-post-down.d
+20	./etc/network
+52	./etc
+4	./tmp
+8	./root
+4	./var/www
+4	./var/spool/mail
+8	./var/spool
+16	./var
+0	./dev/shm
+0	./dev/mqueue
+0	./dev/pts
+0	./dev
+1204	./bin
+4	./home
+0	./proc/fs/xfs
+0	./proc/fs/cifs
+0	./proc/fs/ext4/sda1
+0	./proc/fs/ext4
+0	./proc/fs/jbd2/sda1-8
+0	./proc/fs/jbd2
+0	./proc/fs/nfsd
+0	./proc/fs/fscache
+0	./proc/fs
+0	./proc/bus/pci/00
+0	./proc/bus/pci
+0	./proc/bus/input
+0	./proc/bus
+0	./proc/irq/0
+0	./proc/irq/1
+0	./proc/irq/2
+0	./proc/irq/3/serial
+0	./proc/irq/3
+0	./proc/irq/4/serial
+0	./proc/irq/4
+0	./proc/irq/5
+0	./proc/irq/6
+0	./proc/irq/7
+0	./proc/irq/8/rtc0
+0	./proc/irq/8
+0	./proc/irq/9/acpi
+0	./proc/irq/9
+0	./proc/irq/10
+0	./proc/irq/11
+0	./proc/irq/12
+0	./proc/irq/13
+0	./proc/irq/14
+0	./proc/irq/15
+0	./proc/irq/24/virtio2-config
+0	./proc/irq/24
+0	./proc/irq/25/virtio2-input
+0	./proc/irq/25
+0	./proc/irq/26/ahci[0000:00:02.0]
+0	./proc/irq/26
+0	./proc/irq/27/ahci[0000:00:04.0]
+0	./proc/irq/27
+0	./proc/irq/28/ahci[0000:00:05.0]
+0	./proc/irq/28
+0	./proc/irq/29/ahci[0000:00:06.0]
+0	./proc/irq/29
+0	./proc/irq/30/virtio0-config
+0	./proc/irq/30
+0	./proc/irq/31/virtio0-input.0
+0	./proc/irq/31
+0	./proc/irq/32/virtio0-output.0
+0	./proc/irq/32
+0	./proc/irq/33/virtio1-config
+0	./proc/irq/33
+0	./proc/irq/34/virtio1-rx
+0	./proc/irq/34
+0	./proc/irq/35/virtio1-tx
+0	./proc/irq/35
+0	./proc/irq/36/virtio1-event
+0	./proc/irq/36
+0	./proc/irq
+0	./proc/mpt
+0	./proc/sys/abi
+0	./proc/sys/debug
+0	./proc/sys/dev/cdrom
+0	./proc/sys/dev/hpet
+0	./proc/sys/dev/scsi
+0	./proc/sys/dev/tty
+0	./proc/sys/dev
+0	./proc/sys/fs/binfmt_misc
+0	./proc/sys/fs/epoll
+0	./proc/sys/fs/inotify
+0	./proc/sys/fs/mqueue
+0	./proc/sys/fs/quota
+0	./proc/sys/fs/xfs
+0	./proc/sys/fs
+0	./proc/sys/fscache
+0	./proc/sys/kernel/keys
+0	./proc/sys/kernel/pty
+0	./proc/sys/kernel/random
+0	./proc/sys/kernel/sched_domain/cpu0/domain0
+0	./proc/sys/kernel/sched_domain/cpu0
+0	./proc/sys/kernel/sched_domain/cpu1/domain0
+0	./proc/sys/kernel/sched_domain/cpu1
+0	./proc/sys/kernel/sched_domain
+0	./proc/sys/kernel/usermodehelper
+0	./proc/sys/kernel/yama
+0	./proc/sys/kernel
+0	./proc/sys/net/core
+0	./proc/sys/net/ipv4/conf/all
+0	./proc/sys/net/ipv4/conf/default
+0	./proc/sys/net/ipv4/conf/eth0
+0	./proc/sys/net/ipv4/conf/ip6tnl0
+0	./proc/sys/net/ipv4/conf/lo
+0	./proc/sys/net/ipv4/conf/tunl0
+0	./proc/sys/net/ipv4/conf
+0	./proc/sys/net/ipv4/neigh/eth0
+0	./proc/sys/net/ipv4/neigh/ip6tnl0
+0	./proc/sys/net/ipv4/neigh/lo
+0	./proc/sys/net/ipv4/neigh/tunl0
+0	./proc/sys/net/ipv4/neigh
+0	./proc/sys/net/ipv4/route
+0	./proc/sys/net/ipv4/vs
+0	./proc/sys/net/ipv4
+0	./proc/sys/net/ipv6/conf/all
+0	./proc/sys/net/ipv6/conf/default
+0	./proc/sys/net/ipv6/conf/eth0
+0	./proc/sys/net/ipv6/conf/ip6tnl0
+0	./proc/sys/net/ipv6/conf/lo
+0	./proc/sys/net/ipv6/conf
+0	./proc/sys/net/ipv6/icmp
+0	./proc/sys/net/ipv6/neigh/eth0
+0	./proc/sys/net/ipv6/neigh/ip6tnl0
+0	./proc/sys/net/ipv6/neigh/lo
+0	./proc/sys/net/ipv6/neigh
+0	./proc/sys/net/ipv6/route
+0	./proc/sys/net/ipv6
+0	./proc/sys/net/netfilter/nf_log
+0	./proc/sys/net/netfilter
+0	./proc/sys/net/unix
+0	./proc/sys/net
+0	./proc/sys/user
+0	./proc/sys/vm
+0	./proc/sys
+0	./proc/tty/ldisc
+0	./proc/tty/driver
+0	./proc/tty
+0	./proc/acpi
+0	./proc/driver
+0	./proc/sysvipc
+0	./proc/1/task/1/fd
+0	./proc/1/task/1/fdinfo
+0	./proc/1/task/1/ns
+0	./proc/1/task/1/net/stat
+0	./proc/1/task/1/net/vlan
+0	./proc/1/task/1/net/dev_snmp6
+0	./proc/1/task/1/net/netfilter
+0	./proc/1/task/1/net/xt_recent
+0	./proc/1/task/1/net/ipt_CLUSTERIP
+0	./proc/1/task/1/net/ipt_hashlimit
+0	./proc/1/task/1/net/ip6t_hashlimit
+0	./proc/1/task/1/net
+0	./proc/1/task/1/attr
+0	./proc/1/task/1
+0	./proc/1/task
+0	./proc/1/fd
+0	./proc/1/map_files
+0	./proc/1/fdinfo
+0	./proc/1/ns
+0	./proc/1/net
+0	./proc/1/attr
+0	./proc/1
+0	./proc/12/task/12/fd
+0	./proc/12/task/12/fdinfo
+0	./proc/12/task/12/ns
+0	./proc/12/task/12/net
+0	./proc/12/task/12/attr
+0	./proc/12/task/12
+0	./proc/12/task
+0	./proc/12/fd
+0	./proc/12/map_files
+0	./proc/12/fdinfo
+0	./proc/12/ns
+0	./proc/12/net
+0	./proc/12/attr
+0	./proc/12
+0	./proc
+0	./sys/kernel/fscache
+0	./sys/kernel/mm/transparent_hugepage/khugepaged
+0	./sys/kernel/mm/transparent_hugepage
+0	./sys/kernel/mm/ksm
+0	./sys/kernel/mm/hugepages/hugepages-2048kB
+0	./sys/kernel/mm/hugepages/hugepages-1048576kB
+0	./sys/kernel/mm/hugepages
+0	./sys/kernel/mm
+0	./sys/kernel/security
+0	./sys/kernel/boot_params
+0	./sys/kernel/irq/17
+0	./sys/kernel/irq/35
+0	./sys/kernel/irq/7
+0	./sys/kernel/irq/25
+0	./sys/kernel/irq/15
+0	./sys/kernel/irq/33
+0	./sys/kernel/irq/5
+0	./sys/kernel/irq/13
+0	./sys/kernel/irq/31
+0	./sys/kernel/irq/3
+0	./sys/kernel/irq/11
+0	./sys/kernel/irq/1
+0	./sys/kernel/irq/28
+0	./sys/kernel/irq/18
+0	./sys/kernel/irq/36
+0	./sys/kernel/irq/8
+0	./sys/kernel/irq/26
+0	./sys/kernel/irq/16
+0	./sys/kernel/irq/34
+0	./sys/kernel/irq/6
+0	./sys/kernel/irq/24
+0	./sys/kernel/irq/14
+0	./sys/kernel/irq/32
+0	./sys/kernel/irq/4
+0	./sys/kernel/irq/12
+0	./sys/kernel/irq/30
+0	./sys/kernel/irq/2
+0	./sys/kernel/irq/10
+0	./sys/kernel/irq/29
+0	./sys/kernel/irq/0
+0	./sys/kernel/irq/19
+0	./sys/kernel/irq/9
+0	./sys/kernel/irq/27
+0	./sys/kernel/irq
+0	./sys/kernel/tracing
+0	./sys/kernel/debug
+0	./sys/kernel
+0	./sys/devices/pci0000:00/PNP0103:00/power
+0	./sys/devices/pci0000:00/PNP0103:00
+0	./sys/devices/pci0000:00/0000:00:00.0/power
+0	./sys/devices/pci0000:00/0000:00:00.0
+0	./sys/devices/pci0000:00/0000:00:03.0/power
+0	./sys/devices/pci0000:00/0000:00:03.0/virtio1/power
+0	./sys/devices/pci0000:00/0000:00:03.0/virtio1
+0	./sys/devices/pci0000:00/0000:00:03.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:03.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/ata_port/ata20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/ata_port/ata20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/ata_link/link20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/ata_link/link20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/dev20.0/ata_device/dev20.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/dev20.0/ata_device/dev20.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/dev20.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/dev20.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20/dev20.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/link20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/host19/scsi_host/host19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/host19/scsi_host/host19
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/host19/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/host19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20/host19
+0	./sys/devices/pci0000:00/0000:00:06.0/ata20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/ata_port/ata19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/ata_port/ata19
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_generic/sg3/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_generic/sg3
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_generic
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/queue/iosched
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/queue
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/trace
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/holders
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/slaves
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2/integrity
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block/sr2
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/block
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/bsg/18:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/bsg/18:0:0:0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/bsg
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_device/18:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_device/18:0:0:0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0/scsi_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0/18:0:0:0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/target18:0:0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/scsi_host/host18/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/scsi_host/host18
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/host18
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/dev19.0/ata_device/dev19.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/dev19.0/ata_device/dev19.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/dev19.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/dev19.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/dev19.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/ata_link/link19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/ata_link/link19
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/link19
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata19
+0	./sys/devices/pci0000:00/0000:00:06.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/ata_port/ata23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/ata_port/ata23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/host22/scsi_host/host22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/host22/scsi_host/host22
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/host22/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/host22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/host22
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/ata_link/link23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/ata_link/link23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/dev23.0/ata_device/dev23.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/dev23.0/ata_device/dev23.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/dev23.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/dev23.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23/dev23.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23/link23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/ata_port/ata21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/ata_port/ata21
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/host20/scsi_host/host20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/host20/scsi_host/host20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/host20/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/host20/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/host20
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/dev21.0/ata_device/dev21.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/dev21.0/ata_device/dev21.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/dev21.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/dev21.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/dev21.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/ata_link/link21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/ata_link/link21
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21/link21
+0	./sys/devices/pci0000:00/0000:00:06.0/ata21
+0	./sys/devices/pci0000:00/0000:00:06.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/ata_port/ata24/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/ata_port/ata24
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/dev24.0/ata_device/dev24.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/dev24.0/ata_device/dev24.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/dev24.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/dev24.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/dev24.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/ata_link/link24/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/ata_link/link24
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/link24
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/host23/scsi_host/host23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/host23/scsi_host/host23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/host23/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/host23/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24/host23
+0	./sys/devices/pci0000:00/0000:00:06.0/ata24
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/ata_port/ata22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/ata_port/ata22
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/ata_port
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/dev22.0/ata_device/dev22.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/dev22.0/ata_device/dev22.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/dev22.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/dev22.0/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/dev22.0
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/ata_link/link22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/ata_link/link22
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22/ata_link
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/link22
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/host21/scsi_host/host21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/host21/scsi_host/host21
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/host21/scsi_host
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/host21/power
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22/host21
+0	./sys/devices/pci0000:00/0000:00:06.0/ata22
+0	./sys/devices/pci0000:00/0000:00:06.0
+0	./sys/devices/pci0000:00/pci_bus/0000:00/power
+0	./sys/devices/pci0000:00/pci_bus/0000:00
+0	./sys/devices/pci0000:00/pci_bus
+0	./sys/devices/pci0000:00/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/ata_port/ata1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/ata_port/ata1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/scsi_host/host0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/scsi_host/host0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_disk/0:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_disk/0:0:0:0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_disk
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_generic/sg0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_generic/sg0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_generic
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/sda1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/sda1/trace
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/sda1/holders
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/sda1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/queue/iosched
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/queue
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/trace
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/holders
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/slaves
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda/integrity
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block/sda
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/block
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/bsg/0:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/bsg/0:0:0:0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/bsg
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_device/0:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_device/0:0:0:0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0/scsi_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0/0:0:0:0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0/target0:0:0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/host0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/dev1.0/ata_device/dev1.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/dev1.0/ata_device/dev1.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/dev1.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/dev1.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/dev1.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/ata_link/link1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/ata_link/link1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/link1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/ata_port/ata6/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/ata_port/ata6
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/host5/scsi_host/host5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/host5/scsi_host/host5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/host5/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/host5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/host5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/ata_link/link6/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/ata_link/link6
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/dev6.0/ata_device/dev6.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/dev6.0/ata_device/dev6.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/dev6.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/dev6.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6/dev6.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6/link6
+0	./sys/devices/pci0000:00/0000:00:02.0/ata6
+0	./sys/devices/pci0000:00/0000:00:02.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/ata_port/ata4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/ata_port/ata4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/host3/scsi_host/host3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/host3/scsi_host/host3
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/host3/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/host3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/host3
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/dev4.0/ata_device/dev4.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/dev4.0/ata_device/dev4.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/dev4.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/dev4.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/dev4.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/ata_link/link4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/ata_link/link4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4/link4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/ata_port/ata2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/ata_port/ata2
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/host1/scsi_host/host1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/host1/scsi_host/host1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/host1/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/host1/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/host1
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/dev2.0/ata_device/dev2.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/dev2.0/ata_device/dev2.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/dev2.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/dev2.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/dev2.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/ata_link/link2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/ata_link/link2
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2/link2
+0	./sys/devices/pci0000:00/0000:00:02.0/ata2
+0	./sys/devices/pci0000:00/0000:00:02.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/ata_port/ata5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/ata_port/ata5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/host4/scsi_host/host4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/host4/scsi_host/host4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/host4/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/host4/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/host4
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/dev5.0/ata_device/dev5.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/dev5.0/ata_device/dev5.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/dev5.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/dev5.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/dev5.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/ata_link/link5/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/ata_link/link5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5/link5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata5
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/ata_link/link3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/ata_link/link3
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/ata_link
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/dev3.0/ata_device/dev3.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/dev3.0/ata_device/dev3.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/dev3.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/dev3.0/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3/dev3.0
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/link3
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/ata_port/ata3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/ata_port/ata3
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/ata_port
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/host2/scsi_host/host2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/host2/scsi_host/host2
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/host2/scsi_host
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/host2/power
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3/host2
+0	./sys/devices/pci0000:00/0000:00:02.0/ata3
+0	./sys/devices/pci0000:00/0000:00:02.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/ata_port/ata17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/ata_port/ata17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/host16/scsi_host/host16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/host16/scsi_host/host16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/host16/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/host16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/host16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/dev17.0/ata_device/dev17.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/dev17.0/ata_device/dev17.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/dev17.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/dev17.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/dev17.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/ata_link/link17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/ata_link/link17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17/link17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/ata_port/ata15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/ata_port/ata15
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/host14/scsi_host/host14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/host14/scsi_host/host14
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/host14/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/host14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/host14
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/dev15.0/ata_device/dev15.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/dev15.0/ata_device/dev15.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/dev15.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/dev15.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/dev15.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/ata_link/link15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/ata_link/link15
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15/link15
+0	./sys/devices/pci0000:00/0000:00:05.0/ata15
+0	./sys/devices/pci0000:00/0000:00:05.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/ata_port/ata13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/ata_port/ata13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/scsi_host/host12/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/scsi_host/host12
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_generic/sg2/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_generic/sg2
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_generic
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/queue/iosched
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/queue
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/trace
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/holders
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/slaves
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1/integrity
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block/sr1
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/block
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/bsg/12:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/bsg/12:0:0:0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/bsg
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_device/12:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_device/12:0:0:0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0/scsi_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0/12:0:0:0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12/target12:0:0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/host12
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/dev13.0/ata_device/dev13.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/dev13.0/ata_device/dev13.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/dev13.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/dev13.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/dev13.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/ata_link/link13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/ata_link/link13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13/link13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/ata_port/ata18/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/ata_port/ata18
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/host17/scsi_host/host17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/host17/scsi_host/host17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/host17/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/host17/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/host17
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/ata_link/link18/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/ata_link/link18
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/dev18.0/ata_device/dev18.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/dev18.0/ata_device/dev18.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/dev18.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/dev18.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18/dev18.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18/link18
+0	./sys/devices/pci0000:00/0000:00:05.0/ata18
+0	./sys/devices/pci0000:00/0000:00:05.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/ata_port/ata16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/ata_port/ata16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/host15/scsi_host/host15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/host15/scsi_host/host15
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/host15/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/host15/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/host15
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/dev16.0/ata_device/dev16.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/dev16.0/ata_device/dev16.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/dev16.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/dev16.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/dev16.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/ata_link/link16/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/ata_link/link16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16/link16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata16
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/ata_port/ata14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/ata_port/ata14
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/ata_port
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/ata_link/link14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/ata_link/link14
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/ata_link
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/dev14.0/ata_device/dev14.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/dev14.0/ata_device/dev14.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/dev14.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/dev14.0/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14/dev14.0
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/link14
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/host13/scsi_host/host13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/host13/scsi_host/host13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/host13/scsi_host
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/host13/power
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14/host13
+0	./sys/devices/pci0000:00/0000:00:05.0/ata14
+0	./sys/devices/pci0000:00/0000:00:05.0
+0	./sys/devices/pci0000:00/0000:00:1f.0/power
+0	./sys/devices/pci0000:00/0000:00:1f.0
+0	./sys/devices/pci0000:00/0000:00:01.0/power
+0	./sys/devices/pci0000:00/0000:00:01.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:01.0/virtio0/power
+0	./sys/devices/pci0000:00/0000:00:01.0/virtio0/net
+0	./sys/devices/pci0000:00/0000:00:01.0/virtio0
+0	./sys/devices/pci0000:00/0000:00:01.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/ata_port/ata10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/ata_port/ata10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/host9/scsi_host/host9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/host9/scsi_host/host9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/host9/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/host9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/host9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/dev10.0/ata_device/dev10.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/dev10.0/ata_device/dev10.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/dev10.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/dev10.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/dev10.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/ata_link/link10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/ata_link/link10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/link10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/ata_port/ata8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/ata_port/ata8
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/host7/scsi_host/host7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/host7/scsi_host/host7
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/host7/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/host7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/host7
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/dev8.0/ata_device/dev8.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/dev8.0/ata_device/dev8.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/dev8.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/dev8.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/dev8.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/ata_link/link8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/ata_link/link8
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/link8
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata8
+0	./sys/devices/pci0000:00/0000:00:04.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/ata_port/ata11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/ata_port/ata11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/host10/scsi_host/host10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/host10/scsi_host/host10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/host10/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/host10/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/host10
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/ata_link/link11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/ata_link/link11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/dev11.0/ata_device/dev11.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/dev11.0/ata_device/dev11.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/dev11.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/dev11.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11/dev11.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11/link11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/ata_port/ata9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/ata_port/ata9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/host8/scsi_host/host8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/host8/scsi_host/host8
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/host8/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/host8/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/host8
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/ata_link/link9/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/ata_link/link9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/dev9.0/ata_device/dev9.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/dev9.0/ata_device/dev9.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/dev9.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/dev9.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9/dev9.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9/link9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata9
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/ata_port/ata7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/ata_port/ata7
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/scsi_host/host6/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/scsi_host/host6
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_generic/sg1/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_generic/sg1
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_generic
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/queue/iosched
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/queue
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/trace
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/holders
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/slaves
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0/integrity
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block/sr0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/block
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/bsg/6:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/bsg/6:0:0:0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/bsg
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_device/6:0:0:0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_device/6:0:0:0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0/scsi_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0/6:0:0:0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6/target6:0:0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/host6
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/dev7.0/ata_device/dev7.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/dev7.0/ata_device/dev7.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/dev7.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/dev7.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/dev7.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/ata_link/link7/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/ata_link/link7
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7/link7
+0	./sys/devices/pci0000:00/0000:00:04.0/ata7
+0	./sys/devices/pci0000:00/0000:00:04.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/ata_port/ata12/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/ata_port/ata12
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/ata_port
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/dev12.0/ata_device/dev12.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/dev12.0/ata_device/dev12.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/dev12.0/ata_device
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/dev12.0/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/dev12.0
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/ata_link/link12/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/ata_link/link12
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12/ata_link
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/link12
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/host11/scsi_host/host11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/host11/scsi_host/host11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/host11/scsi_host
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/host11/power
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12/host11
+0	./sys/devices/pci0000:00/0000:00:04.0/ata12
+0	./sys/devices/pci0000:00/0000:00:04.0
+0	./sys/devices/pci0000:00/0000:00:07.0/power
+0	./sys/devices/pci0000:00/0000:00:07.0/msi_irqs
+0	./sys/devices/pci0000:00/0000:00:07.0/virtio2/power
+0	./sys/devices/pci0000:00/0000:00:07.0/virtio2
+0	./sys/devices/pci0000:00/0000:00:07.0
+0	./sys/devices/pci0000:00
+0	./sys/devices/platform/platform-framebuffer.0/power
+0	./sys/devices/platform/platform-framebuffer.0
+0	./sys/devices/platform/power
+0	./sys/devices/platform/alarmtimer/power
+0	./sys/devices/platform/alarmtimer
+0	./sys/devices/platform/pcspkr/power
+0	./sys/devices/platform/pcspkr/input/input1/event1/power
+0	./sys/devices/platform/pcspkr/input/input1/event1
+0	./sys/devices/platform/pcspkr/input/input1/id
+0	./sys/devices/platform/pcspkr/input/input1/power
+0	./sys/devices/platform/pcspkr/input/input1/capabilities
+0	./sys/devices/platform/pcspkr/input/input1
+0	./sys/devices/platform/pcspkr/input
+0	./sys/devices/platform/pcspkr
+0	./sys/devices/platform/serial8250/power
+0	./sys/devices/platform/serial8250/tty/ttyS2/power
+0	./sys/devices/platform/serial8250/tty/ttyS2
+0	./sys/devices/platform/serial8250/tty/ttyS3/power
+0	./sys/devices/platform/serial8250/tty/ttyS3
+0	./sys/devices/platform/serial8250/tty
+0	./sys/devices/platform/serial8250
+0	./sys/devices/platform
+0	./sys/devices/breakpoint/power
+0	./sys/devices/breakpoint
+0	./sys/devices/pnp0/00:00/power
+0	./sys/devices/pnp0/00:00
+0	./sys/devices/pnp0/00:05/power
+0	./sys/devices/pnp0/00:05/rtc/rtc0/power
+0	./sys/devices/pnp0/00:05/rtc/rtc0
+0	./sys/devices/pnp0/00:05/rtc
+0	./sys/devices/pnp0/00:05
+0	./sys/devices/pnp0/power
+0	./sys/devices/pnp0/00:03/power
+0	./sys/devices/pnp0/00:03/tty/ttyS0/power
+0	./sys/devices/pnp0/00:03/tty/ttyS0
+0	./sys/devices/pnp0/00:03/tty
+0	./sys/devices/pnp0/00:03
+0	./sys/devices/pnp0/00:01/power
+0	./sys/devices/pnp0/00:01
+0	./sys/devices/pnp0/00:04/power
+0	./sys/devices/pnp0/00:04/tty/ttyS1/power
+0	./sys/devices/pnp0/00:04/tty/ttyS1
+0	./sys/devices/pnp0/00:04/tty
+0	./sys/devices/pnp0/00:04
+0	./sys/devices/pnp0/00:02/power
+0	./sys/devices/pnp0/00:02
+0	./sys/devices/pnp0
+0	./sys/devices/system/clockevents/clockevent0/power
+0	./sys/devices/system/clockevents/clockevent0
+0	./sys/devices/system/clockevents/power
+0	./sys/devices/system/clockevents/broadcast/power
+0	./sys/devices/system/clockevents/broadcast
+0	./sys/devices/system/clockevents/clockevent1/power
+0	./sys/devices/system/clockevents/clockevent1
+0	./sys/devices/system/clockevents
+0	./sys/devices/system/cpu/cpuidle
+0	./sys/devices/system/cpu/vulnerabilities
+0	./sys/devices/system/cpu/power
+0	./sys/devices/system/cpu/cpu1/power
+0	./sys/devices/system/cpu/cpu1/hotplug
+0	./sys/devices/system/cpu/cpu1/cache/index0/power
+0	./sys/devices/system/cpu/cpu1/cache/index0
+0	./sys/devices/system/cpu/cpu1/cache/power
+0	./sys/devices/system/cpu/cpu1/cache/index3/power
+0	./sys/devices/system/cpu/cpu1/cache/index3
+0	./sys/devices/system/cpu/cpu1/cache/index1/power
+0	./sys/devices/system/cpu/cpu1/cache/index1
+0	./sys/devices/system/cpu/cpu1/cache/index2/power
+0	./sys/devices/system/cpu/cpu1/cache/index2
+0	./sys/devices/system/cpu/cpu1/cache
+0	./sys/devices/system/cpu/cpu1/topology
+0	./sys/devices/system/cpu/cpu1
+0	./sys/devices/system/cpu/hotplug
+0	./sys/devices/system/cpu/smt
+0	./sys/devices/system/cpu/cpufreq
+0	./sys/devices/system/cpu/cpu0/power
+0	./sys/devices/system/cpu/cpu0/hotplug
+0	./sys/devices/system/cpu/cpu0/cache/index0/power
+0	./sys/devices/system/cpu/cpu0/cache/index0
+0	./sys/devices/system/cpu/cpu0/cache/power
+0	./sys/devices/system/cpu/cpu0/cache/index3/power
+0	./sys/devices/system/cpu/cpu0/cache/index3
+0	./sys/devices/system/cpu/cpu0/cache/index1/power
+0	./sys/devices/system/cpu/cpu0/cache/index1
+0	./sys/devices/system/cpu/cpu0/cache/index2/power
+0	./sys/devices/system/cpu/cpu0/cache/index2
+0	./sys/devices/system/cpu/cpu0/cache
+0	./sys/devices/system/cpu/cpu0/topology
+0	./sys/devices/system/cpu/cpu0
+0	./sys/devices/system/cpu
+0	./sys/devices/system/clocksource/clocksource0/power
+0	./sys/devices/system/clocksource/clocksource0
+0	./sys/devices/system/clocksource/power
+0	./sys/devices/system/clocksource
+0	./sys/devices/system/memory/memory6/power
+0	./sys/devices/system/memory/memory6
+0	./sys/devices/system/memory/memory12/power
+0	./sys/devices/system/memory/memory12
+0	./sys/devices/system/memory/memory4/power
+0	./sys/devices/system/memory/memory4
+0	./sys/devices/system/memory/memory10/power
+0	./sys/devices/system/memory/memory10
+0	./sys/devices/system/memory/memory2/power
+0	./sys/devices/system/memory/memory2
+0	./sys/devices/system/memory/memory0/power
+0	./sys/devices/system/memory/memory0
+0	./sys/devices/system/memory/power
+0	./sys/devices/system/memory/memory9/power
+0	./sys/devices/system/memory/memory9
+0	./sys/devices/system/memory/memory15/power
+0	./sys/devices/system/memory/memory15
+0	./sys/devices/system/memory/memory7/power
+0	./sys/devices/system/memory/memory7
+0	./sys/devices/system/memory/memory13/power
+0	./sys/devices/system/memory/memory13
+0	./sys/devices/system/memory/memory5/power
+0	./sys/devices/system/memory/memory5
+0	./sys/devices/system/memory/memory11/power
+0	./sys/devices/system/memory/memory11
+0	./sys/devices/system/memory/memory3/power
+0	./sys/devices/system/memory/memory3
+0	./sys/devices/system/memory/memory1/power
+0	./sys/devices/system/memory/memory1
+0	./sys/devices/system/memory/memory8/power
+0	./sys/devices/system/memory/memory8
+0	./sys/devices/system/memory/memory14/power
+0	./sys/devices/system/memory/memory14
+0	./sys/devices/system/memory
+0	./sys/devices/system/container/power
+0	./sys/devices/system/container
+0	./sys/devices/system
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:01/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:01
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/power
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/id
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/power
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/capabilities
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0/power
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00/input
+0	./sys/devices/LNXSYSTM:00/LNXPWRBN:00
+0	./sys/devices/LNXSYSTM:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0103:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0103:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:05/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:05
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0100:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0100:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0F03:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0F03:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0501:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0501:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:03/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:03
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0000:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0000:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:01/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:01
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:06/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:06
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0501:01/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0501:01
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:04/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:04
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0B00:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0B00:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:02/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:02
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0303:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0303:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C02:00/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C02:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:07/power
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00/PNP0C0F:07
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00
+0	./sys/devices/LNXSYSTM:00/LNXSYBUS:00
+0	./sys/devices/LNXSYSTM:00
+0	./sys/devices/power/power
+0	./sys/devices/power/events
+0	./sys/devices/power/format
+0	./sys/devices/power
+0	./sys/devices/software/power
+0	./sys/devices/software
+0	./sys/devices/virtual/cpuid/cpu1/power
+0	./sys/devices/virtual/cpuid/cpu1
+0	./sys/devices/virtual/cpuid/cpu0/power
+0	./sys/devices/virtual/cpuid/cpu0
+0	./sys/devices/virtual/cpuid
+0	./sys/devices/virtual/vtconsole/vtcon0/power
+0	./sys/devices/virtual/vtconsole/vtcon0
+0	./sys/devices/virtual/vtconsole
+0	./sys/devices/virtual/mem/mem/power
+0	./sys/devices/virtual/mem/mem
+0	./sys/devices/virtual/mem/zero/power
+0	./sys/devices/virtual/mem/zero
+0	./sys/devices/virtual/mem/port/power
+0	./sys/devices/virtual/mem/port
+0	./sys/devices/virtual/mem/kmsg/power
+0	./sys/devices/virtual/mem/kmsg
+0	./sys/devices/virtual/mem/full/power
+0	./sys/devices/virtual/mem/full
+0	./sys/devices/virtual/mem/urandom/power
+0	./sys/devices/virtual/mem/urandom
+0	./sys/devices/virtual/mem/null/power
+0	./sys/devices/virtual/mem/null
+0	./sys/devices/virtual/mem/random/power
+0	./sys/devices/virtual/mem/random
+0	./sys/devices/virtual/mem
+0	./sys/devices/virtual/graphics/fbcon/power
+0	./sys/devices/virtual/graphics/fbcon
+0	./sys/devices/virtual/graphics
+0	./sys/devices/virtual/misc/nvram/power
+0	./sys/devices/virtual/misc/nvram
+0	./sys/devices/virtual/misc/hw_random/power
+0	./sys/devices/virtual/misc/hw_random
+0	./sys/devices/virtual/misc/cachefiles/power
+0	./sys/devices/virtual/misc/cachefiles
+0	./sys/devices/virtual/misc/tun/power
+0	./sys/devices/virtual/misc/tun
+0	./sys/devices/virtual/misc/network_latency/power
+0	./sys/devices/virtual/misc/network_latency
+0	./sys/devices/virtual/misc/psaux/power
+0	./sys/devices/virtual/misc/psaux
+0	./sys/devices/virtual/misc/memory_bandwidth/power
+0	./sys/devices/virtual/misc/memory_bandwidth
+0	./sys/devices/virtual/misc/vsock/power
+0	./sys/devices/virtual/misc/vsock
+0	./sys/devices/virtual/misc/device-mapper/power
+0	./sys/devices/virtual/misc/device-mapper
+0	./sys/devices/virtual/misc/cpu_dma_latency/power
+0	./sys/devices/virtual/misc/cpu_dma_latency
+0	./sys/devices/virtual/misc/uinput/power
+0	./sys/devices/virtual/misc/uinput
+0	./sys/devices/virtual/misc/hpet/power
+0	./sys/devices/virtual/misc/hpet
+0	./sys/devices/virtual/misc/fuse/power
+0	./sys/devices/virtual/misc/fuse
+0	./sys/devices/virtual/misc/cuse/power
+0	./sys/devices/virtual/misc/cuse
+0	./sys/devices/virtual/misc/network_throughput/power
+0	./sys/devices/virtual/misc/network_throughput
+0	./sys/devices/virtual/misc/loop-control/power
+0	./sys/devices/virtual/misc/loop-control
+0	./sys/devices/virtual/misc
+0	./sys/devices/virtual/xt_idletimer/timers/power
+0	./sys/devices/virtual/xt_idletimer/timers
+0	./sys/devices/virtual/xt_idletimer
+0	./sys/devices/virtual/net/ip6tnl0/statistics
+0	./sys/devices/virtual/net/ip6tnl0/power
+0	./sys/devices/virtual/net/ip6tnl0/queues/tx-0/byte_queue_limits
+0	./sys/devices/virtual/net/ip6tnl0/queues/tx-0
+0	./sys/devices/virtual/net/ip6tnl0/queues/rx-0
+0	./sys/devices/virtual/net/ip6tnl0/queues
+0	./sys/devices/virtual/net/ip6tnl0
+0	./sys/devices/virtual/net/eth0/statistics
+0	./sys/devices/virtual/net/eth0/power
+0	./sys/devices/virtual/net/eth0/queues/tx-0/byte_queue_limits
+0	./sys/devices/virtual/net/eth0/queues/tx-0
+0	./sys/devices/virtual/net/eth0/queues/rx-0
+0	./sys/devices/virtual/net/eth0/queues
+0	./sys/devices/virtual/net/eth0
+0	./sys/devices/virtual/net/tunl0/statistics
+0	./sys/devices/virtual/net/tunl0/power
+0	./sys/devices/virtual/net/tunl0/queues/tx-0/byte_queue_limits
+0	./sys/devices/virtual/net/tunl0/queues/tx-0
+0	./sys/devices/virtual/net/tunl0/queues/rx-0
+0	./sys/devices/virtual/net/tunl0/queues
+0	./sys/devices/virtual/net/tunl0
+0	./sys/devices/virtual/net/lo/statistics
+0	./sys/devices/virtual/net/lo/power
+0	./sys/devices/virtual/net/lo/queues/tx-0/byte_queue_limits
+0	./sys/devices/virtual/net/lo/queues/tx-0
+0	./sys/devices/virtual/net/lo/queues/rx-0
+0	./sys/devices/virtual/net/lo/queues
+0	./sys/devices/virtual/net/lo
+0	./sys/devices/virtual/net
+0	./sys/devices/virtual/tty/tty58/power
+0	./sys/devices/virtual/tty/tty58
+0	./sys/devices/virtual/tty/ptmx/power
+0	./sys/devices/virtual/tty/ptmx
+0	./sys/devices/virtual/tty/tty48/power
+0	./sys/devices/virtual/tty/tty48
+0	./sys/devices/virtual/tty/tty1/power
+0	./sys/devices/virtual/tty/tty1
+0	./sys/devices/virtual/tty/tty38/power
+0	./sys/devices/virtual/tty/tty38
+0	./sys/devices/virtual/tty/tty28/power
+0	./sys/devices/virtual/tty/tty28
+0	./sys/devices/virtual/tty/tty56/power
+0	./sys/devices/virtual/tty/tty56
+0	./sys/devices/virtual/tty/tty18/power
+0	./sys/devices/virtual/tty/tty18
+0	./sys/devices/virtual/tty/tty46/power
+0	./sys/devices/virtual/tty/tty46
+0	./sys/devices/virtual/tty/console/power
+0	./sys/devices/virtual/tty/console
+0	./sys/devices/virtual/tty/tty36/power
+0	./sys/devices/virtual/tty/tty36
+0	./sys/devices/virtual/tty/tty26/power
+0	./sys/devices/virtual/tty/tty26
+0	./sys/devices/virtual/tty/tty54/power
+0	./sys/devices/virtual/tty/tty54
+0	./sys/devices/virtual/tty/tty16/power
+0	./sys/devices/virtual/tty/tty16
+0	./sys/devices/virtual/tty/tty8/power
+0	./sys/devices/virtual/tty/tty8
+0	./sys/devices/virtual/tty/tty44/power
+0	./sys/devices/virtual/tty/tty44
+0	./sys/devices/virtual/tty/tty34/power
+0	./sys/devices/virtual/tty/tty34
+0	./sys/devices/virtual/tty/tty62/power
+0	./sys/devices/virtual/tty/tty62
+0	./sys/devices/virtual/tty/tty24/power
+0	./sys/devices/virtual/tty/tty24
+0	./sys/devices/virtual/tty/tty52/power
+0	./sys/devices/virtual/tty/tty52
+0	./sys/devices/virtual/tty/tty14/power
+0	./sys/devices/virtual/tty/tty14
+0	./sys/devices/virtual/tty/tty6/power
+0	./sys/devices/virtual/tty/tty6
+0	./sys/devices/virtual/tty/tty42/power
+0	./sys/devices/virtual/tty/tty42
+0	./sys/devices/virtual/tty/tty32/power
+0	./sys/devices/virtual/tty/tty32
+0	./sys/devices/virtual/tty/tty60/power
+0	./sys/devices/virtual/tty/tty60
+0	./sys/devices/virtual/tty/tty22/power
+0	./sys/devices/virtual/tty/tty22
+0	./sys/devices/virtual/tty/tty50/power
+0	./sys/devices/virtual/tty/tty50
+0	./sys/devices/virtual/tty/tty12/power
+0	./sys/devices/virtual/tty/tty12
+0	./sys/devices/virtual/tty/tty4/power
+0	./sys/devices/virtual/tty/tty4
+0	./sys/devices/virtual/tty/tty40/power
+0	./sys/devices/virtual/tty/tty40
+0	./sys/devices/virtual/tty/tty30/power
+0	./sys/devices/virtual/tty/tty30
+0	./sys/devices/virtual/tty/tty59/power
+0	./sys/devices/virtual/tty/tty59
+0	./sys/devices/virtual/tty/tty20/power
+0	./sys/devices/virtual/tty/tty20
+0	./sys/devices/virtual/tty/tty49/power
+0	./sys/devices/virtual/tty/tty49
+0	./sys/devices/virtual/tty/tty10/power
+0	./sys/devices/virtual/tty/tty10
+0	./sys/devices/virtual/tty/tty2/power
+0	./sys/devices/virtual/tty/tty2
+0	./sys/devices/virtual/tty/tty39/power
+0	./sys/devices/virtual/tty/tty39
+0	./sys/devices/virtual/tty/tty29/power
+0	./sys/devices/virtual/tty/tty29
+0	./sys/devices/virtual/tty/tty57/power
+0	./sys/devices/virtual/tty/tty57
+0	./sys/devices/virtual/tty/tty19/power
+0	./sys/devices/virtual/tty/tty19
+0	./sys/devices/virtual/tty/tty47/power
+0	./sys/devices/virtual/tty/tty47
+0	./sys/devices/virtual/tty/tty0/power
+0	./sys/devices/virtual/tty/tty0
+0	./sys/devices/virtual/tty/tty37/power
+0	./sys/devices/virtual/tty/tty37
+0	./sys/devices/virtual/tty/tty27/power
+0	./sys/devices/virtual/tty/tty27
+0	./sys/devices/virtual/tty/tty55/power
+0	./sys/devices/virtual/tty/tty55
+0	./sys/devices/virtual/tty/tty17/power
+0	./sys/devices/virtual/tty/tty17
+0	./sys/devices/virtual/tty/tty9/power
+0	./sys/devices/virtual/tty/tty9
+0	./sys/devices/virtual/tty/tty45/power
+0	./sys/devices/virtual/tty/tty45
+0	./sys/devices/virtual/tty/tty/power
+0	./sys/devices/virtual/tty/tty
+0	./sys/devices/virtual/tty/tty35/power
+0	./sys/devices/virtual/tty/tty35
+0	./sys/devices/virtual/tty/tty63/power
+0	./sys/devices/virtual/tty/tty63
+0	./sys/devices/virtual/tty/tty25/power
+0	./sys/devices/virtual/tty/tty25
+0	./sys/devices/virtual/tty/tty53/power
+0	./sys/devices/virtual/tty/tty53
+0	./sys/devices/virtual/tty/tty15/power
+0	./sys/devices/virtual/tty/tty15
+0	./sys/devices/virtual/tty/tty7/power
+0	./sys/devices/virtual/tty/tty7
+0	./sys/devices/virtual/tty/tty43/power
+0	./sys/devices/virtual/tty/tty43
+0	./sys/devices/virtual/tty/tty33/power
+0	./sys/devices/virtual/tty/tty33
+0	./sys/devices/virtual/tty/tty61/power
+0	./sys/devices/virtual/tty/tty61
+0	./sys/devices/virtual/tty/tty23/power
+0	./sys/devices/virtual/tty/tty23
+0	./sys/devices/virtual/tty/tty51/power
+0	./sys/devices/virtual/tty/tty51
+0	./sys/devices/virtual/tty/tty13/power
+0	./sys/devices/virtual/tty/tty13
+0	./sys/devices/virtual/tty/tty5/power
+0	./sys/devices/virtual/tty/tty5
+0	./sys/devices/virtual/tty/tty41/power
+0	./sys/devices/virtual/tty/tty41
+0	./sys/devices/virtual/tty/tty31/power
+0	./sys/devices/virtual/tty/tty31
+0	./sys/devices/virtual/tty/tty21/power
+0	./sys/devices/virtual/tty/tty21
+0	./sys/devices/virtual/tty/tty11/power
+0	./sys/devices/virtual/tty/tty11
+0	./sys/devices/virtual/tty/tty3/power
+0	./sys/devices/virtual/tty/tty3
+0	./sys/devices/virtual/tty
+0	./sys/devices/virtual/bdi/7:6/power
+0	./sys/devices/virtual/bdi/7:6
+0	./sys/devices/virtual/bdi/43:0/power
+0	./sys/devices/virtual/bdi/43:0
+0	./sys/devices/virtual/bdi/0:76/power
+0	./sys/devices/virtual/bdi/0:76
+0	./sys/devices/virtual/bdi/43:9/power
+0	./sys/devices/virtual/bdi/43:9
+0	./sys/devices/virtual/bdi/11:1/power
+0	./sys/devices/virtual/bdi/11:1
+0	./sys/devices/virtual/bdi/7:4/power
+0	./sys/devices/virtual/bdi/7:4
+0	./sys/devices/virtual/bdi/43:7/power
+0	./sys/devices/virtual/bdi/43:7
+0	./sys/devices/virtual/bdi/7:2/power
+0	./sys/devices/virtual/bdi/7:2
+0	./sys/devices/virtual/bdi/43:15/power
+0	./sys/devices/virtual/bdi/43:15
+0	./sys/devices/virtual/bdi/43:5/power
+0	./sys/devices/virtual/bdi/43:5
+0	./sys/devices/virtual/bdi/7:0/power
+0	./sys/devices/virtual/bdi/7:0
+0	./sys/devices/virtual/bdi/43:13/power
+0	./sys/devices/virtual/bdi/43:13
+0	./sys/devices/virtual/bdi/43:3/power
+0	./sys/devices/virtual/bdi/43:3
+0	./sys/devices/virtual/bdi/43:11/power
+0	./sys/devices/virtual/bdi/43:11
+0	./sys/devices/virtual/bdi/7:7/power
+0	./sys/devices/virtual/bdi/7:7
+0	./sys/devices/virtual/bdi/43:1/power
+0	./sys/devices/virtual/bdi/43:1
+0	./sys/devices/virtual/bdi/0:77/power
+0	./sys/devices/virtual/bdi/0:77
+0	./sys/devices/virtual/bdi/11:2/power
+0	./sys/devices/virtual/bdi/11:2
+0	./sys/devices/virtual/bdi/7:5/power
+0	./sys/devices/virtual/bdi/7:5
+0	./sys/devices/virtual/bdi/0:75/power
+0	./sys/devices/virtual/bdi/0:75
+0	./sys/devices/virtual/bdi/43:8/power
+0	./sys/devices/virtual/bdi/43:8
+0	./sys/devices/virtual/bdi/11:0/power
+0	./sys/devices/virtual/bdi/11:0
+0	./sys/devices/virtual/bdi/7:3/power
+0	./sys/devices/virtual/bdi/7:3
+0	./sys/devices/virtual/bdi/43:6/power
+0	./sys/devices/virtual/bdi/43:6
+0	./sys/devices/virtual/bdi/7:1/power
+0	./sys/devices/virtual/bdi/7:1
+0	./sys/devices/virtual/bdi/43:14/power
+0	./sys/devices/virtual/bdi/43:14
+0	./sys/devices/virtual/bdi/43:4/power
+0	./sys/devices/virtual/bdi/43:4
+0	./sys/devices/virtual/bdi/43:12/power
+0	./sys/devices/virtual/bdi/43:12
+0	./sys/devices/virtual/bdi/43:2/power
+0	./sys/devices/virtual/bdi/43:2
+0	./sys/devices/virtual/bdi/0:78/power
+0	./sys/devices/virtual/bdi/0:78
+0	./sys/devices/virtual/bdi/8:0/power
+0	./sys/devices/virtual/bdi/8:0
+0	./sys/devices/virtual/bdi/43:10/power
+0	./sys/devices/virtual/bdi/43:10
+0	./sys/devices/virtual/bdi
+0	./sys/devices/virtual/workqueue/writeback/power
+0	./sys/devices/virtual/workqueue/writeback
+0	./sys/devices/virtual/workqueue/power
+0	./sys/devices/virtual/workqueue
+0	./sys/devices/virtual/block/loop1/power
+0	./sys/devices/virtual/block/loop1/mq/0/cpu1
+0	./sys/devices/virtual/block/loop1/mq/0/cpu0
+0	./sys/devices/virtual/block/loop1/mq/0
+0	./sys/devices/virtual/block/loop1/mq
+0	./sys/devices/virtual/block/loop1/queue
+0	./sys/devices/virtual/block/loop1/trace
+0	./sys/devices/virtual/block/loop1/holders
+0	./sys/devices/virtual/block/loop1/slaves
+0	./sys/devices/virtual/block/loop1/integrity
+0	./sys/devices/virtual/block/loop1
+0	./sys/devices/virtual/block/nbd3/power
+0	./sys/devices/virtual/block/nbd3/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd3/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd3/mq/0
+0	./sys/devices/virtual/block/nbd3/mq
+0	./sys/devices/virtual/block/nbd3/queue
+0	./sys/devices/virtual/block/nbd3/trace
+0	./sys/devices/virtual/block/nbd3/holders
+0	./sys/devices/virtual/block/nbd3/slaves
+0	./sys/devices/virtual/block/nbd3/integrity
+0	./sys/devices/virtual/block/nbd3
+0	./sys/devices/virtual/block/nbd15/power
+0	./sys/devices/virtual/block/nbd15/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd15/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd15/mq/0
+0	./sys/devices/virtual/block/nbd15/mq
+0	./sys/devices/virtual/block/nbd15/queue
+0	./sys/devices/virtual/block/nbd15/trace
+0	./sys/devices/virtual/block/nbd15/holders
+0	./sys/devices/virtual/block/nbd15/slaves
+0	./sys/devices/virtual/block/nbd15/integrity
+0	./sys/devices/virtual/block/nbd15
+0	./sys/devices/virtual/block/nbd1/power
+0	./sys/devices/virtual/block/nbd1/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd1/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd1/mq/0
+0	./sys/devices/virtual/block/nbd1/mq
+0	./sys/devices/virtual/block/nbd1/queue
+0	./sys/devices/virtual/block/nbd1/trace
+0	./sys/devices/virtual/block/nbd1/holders
+0	./sys/devices/virtual/block/nbd1/slaves
+0	./sys/devices/virtual/block/nbd1/integrity
+0	./sys/devices/virtual/block/nbd1
+0	./sys/devices/virtual/block/nbd13/power
+0	./sys/devices/virtual/block/nbd13/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd13/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd13/mq/0
+0	./sys/devices/virtual/block/nbd13/mq
+0	./sys/devices/virtual/block/nbd13/queue
+0	./sys/devices/virtual/block/nbd13/trace
+0	./sys/devices/virtual/block/nbd13/holders
+0	./sys/devices/virtual/block/nbd13/slaves
+0	./sys/devices/virtual/block/nbd13/integrity
+0	./sys/devices/virtual/block/nbd13
+0	./sys/devices/virtual/block/loop6/power
+0	./sys/devices/virtual/block/loop6/mq/0/cpu1
+0	./sys/devices/virtual/block/loop6/mq/0/cpu0
+0	./sys/devices/virtual/block/loop6/mq/0
+0	./sys/devices/virtual/block/loop6/mq
+0	./sys/devices/virtual/block/loop6/queue
+0	./sys/devices/virtual/block/loop6/trace
+0	./sys/devices/virtual/block/loop6/holders
+0	./sys/devices/virtual/block/loop6/slaves
+0	./sys/devices/virtual/block/loop6/integrity
+0	./sys/devices/virtual/block/loop6
+0	./sys/devices/virtual/block/nbd8/power
+0	./sys/devices/virtual/block/nbd8/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd8/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd8/mq/0
+0	./sys/devices/virtual/block/nbd8/mq
+0	./sys/devices/virtual/block/nbd8/queue
+0	./sys/devices/virtual/block/nbd8/trace
+0	./sys/devices/virtual/block/nbd8/holders
+0	./sys/devices/virtual/block/nbd8/slaves
+0	./sys/devices/virtual/block/nbd8/integrity
+0	./sys/devices/virtual/block/nbd8
+0	./sys/devices/virtual/block/nbd11/power
+0	./sys/devices/virtual/block/nbd11/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd11/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd11/mq/0
+0	./sys/devices/virtual/block/nbd11/mq
+0	./sys/devices/virtual/block/nbd11/queue
+0	./sys/devices/virtual/block/nbd11/trace
+0	./sys/devices/virtual/block/nbd11/holders
+0	./sys/devices/virtual/block/nbd11/slaves
+0	./sys/devices/virtual/block/nbd11/integrity
+0	./sys/devices/virtual/block/nbd11
+0	./sys/devices/virtual/block/loop4/power
+0	./sys/devices/virtual/block/loop4/mq/0/cpu1
+0	./sys/devices/virtual/block/loop4/mq/0/cpu0
+0	./sys/devices/virtual/block/loop4/mq/0
+0	./sys/devices/virtual/block/loop4/mq
+0	./sys/devices/virtual/block/loop4/queue
+0	./sys/devices/virtual/block/loop4/trace
+0	./sys/devices/virtual/block/loop4/holders
+0	./sys/devices/virtual/block/loop4/slaves
+0	./sys/devices/virtual/block/loop4/integrity
+0	./sys/devices/virtual/block/loop4
+0	./sys/devices/virtual/block/nbd6/power
+0	./sys/devices/virtual/block/nbd6/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd6/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd6/mq/0
+0	./sys/devices/virtual/block/nbd6/mq
+0	./sys/devices/virtual/block/nbd6/queue
+0	./sys/devices/virtual/block/nbd6/trace
+0	./sys/devices/virtual/block/nbd6/holders
+0	./sys/devices/virtual/block/nbd6/slaves
+0	./sys/devices/virtual/block/nbd6/integrity
+0	./sys/devices/virtual/block/nbd6
+0	./sys/devices/virtual/block/loop2/power
+0	./sys/devices/virtual/block/loop2/mq/0/cpu1
+0	./sys/devices/virtual/block/loop2/mq/0/cpu0
+0	./sys/devices/virtual/block/loop2/mq/0
+0	./sys/devices/virtual/block/loop2/mq
+0	./sys/devices/virtual/block/loop2/queue
+0	./sys/devices/virtual/block/loop2/trace
+0	./sys/devices/virtual/block/loop2/holders
+0	./sys/devices/virtual/block/loop2/slaves
+0	./sys/devices/virtual/block/loop2/integrity
+0	./sys/devices/virtual/block/loop2
+0	./sys/devices/virtual/block/nbd4/power
+0	./sys/devices/virtual/block/nbd4/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd4/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd4/mq/0
+0	./sys/devices/virtual/block/nbd4/mq
+0	./sys/devices/virtual/block/nbd4/queue
+0	./sys/devices/virtual/block/nbd4/trace
+0	./sys/devices/virtual/block/nbd4/holders
+0	./sys/devices/virtual/block/nbd4/slaves
+0	./sys/devices/virtual/block/nbd4/integrity
+0	./sys/devices/virtual/block/nbd4
+0	./sys/devices/virtual/block/loop0/power
+0	./sys/devices/virtual/block/loop0/mq/0/cpu1
+0	./sys/devices/virtual/block/loop0/mq/0/cpu0
+0	./sys/devices/virtual/block/loop0/mq/0
+0	./sys/devices/virtual/block/loop0/mq
+0	./sys/devices/virtual/block/loop0/queue
+0	./sys/devices/virtual/block/loop0/trace
+0	./sys/devices/virtual/block/loop0/holders
+0	./sys/devices/virtual/block/loop0/slaves
+0	./sys/devices/virtual/block/loop0/integrity
+0	./sys/devices/virtual/block/loop0
+0	./sys/devices/virtual/block/nbd2/power
+0	./sys/devices/virtual/block/nbd2/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd2/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd2/mq/0
+0	./sys/devices/virtual/block/nbd2/mq
+0	./sys/devices/virtual/block/nbd2/queue
+0	./sys/devices/virtual/block/nbd2/trace
+0	./sys/devices/virtual/block/nbd2/holders
+0	./sys/devices/virtual/block/nbd2/slaves
+0	./sys/devices/virtual/block/nbd2/integrity
+0	./sys/devices/virtual/block/nbd2
+0	./sys/devices/virtual/block/nbd14/power
+0	./sys/devices/virtual/block/nbd14/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd14/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd14/mq/0
+0	./sys/devices/virtual/block/nbd14/mq
+0	./sys/devices/virtual/block/nbd14/queue
+0	./sys/devices/virtual/block/nbd14/trace
+0	./sys/devices/virtual/block/nbd14/holders
+0	./sys/devices/virtual/block/nbd14/slaves
+0	./sys/devices/virtual/block/nbd14/integrity
+0	./sys/devices/virtual/block/nbd14
+0	./sys/devices/virtual/block/nbd0/power
+0	./sys/devices/virtual/block/nbd0/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd0/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd0/mq/0
+0	./sys/devices/virtual/block/nbd0/mq
+0	./sys/devices/virtual/block/nbd0/queue
+0	./sys/devices/virtual/block/nbd0/trace
+0	./sys/devices/virtual/block/nbd0/holders
+0	./sys/devices/virtual/block/nbd0/slaves
+0	./sys/devices/virtual/block/nbd0/integrity
+0	./sys/devices/virtual/block/nbd0
+0	./sys/devices/virtual/block/loop7/power
+0	./sys/devices/virtual/block/loop7/mq/0/cpu1
+0	./sys/devices/virtual/block/loop7/mq/0/cpu0
+0	./sys/devices/virtual/block/loop7/mq/0
+0	./sys/devices/virtual/block/loop7/mq
+0	./sys/devices/virtual/block/loop7/queue
+0	./sys/devices/virtual/block/loop7/trace
+0	./sys/devices/virtual/block/loop7/holders
+0	./sys/devices/virtual/block/loop7/slaves
+0	./sys/devices/virtual/block/loop7/integrity
+0	./sys/devices/virtual/block/loop7
+0	./sys/devices/virtual/block/nbd9/power
+0	./sys/devices/virtual/block/nbd9/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd9/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd9/mq/0
+0	./sys/devices/virtual/block/nbd9/mq
+0	./sys/devices/virtual/block/nbd9/queue
+0	./sys/devices/virtual/block/nbd9/trace
+0	./sys/devices/virtual/block/nbd9/holders
+0	./sys/devices/virtual/block/nbd9/slaves
+0	./sys/devices/virtual/block/nbd9/integrity
+0	./sys/devices/virtual/block/nbd9
+0	./sys/devices/virtual/block/nbd12/power
+0	./sys/devices/virtual/block/nbd12/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd12/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd12/mq/0
+0	./sys/devices/virtual/block/nbd12/mq
+0	./sys/devices/virtual/block/nbd12/queue
+0	./sys/devices/virtual/block/nbd12/trace
+0	./sys/devices/virtual/block/nbd12/holders
+0	./sys/devices/virtual/block/nbd12/slaves
+0	./sys/devices/virtual/block/nbd12/integrity
+0	./sys/devices/virtual/block/nbd12
+0	./sys/devices/virtual/block/loop5/power
+0	./sys/devices/virtual/block/loop5/mq/0/cpu1
+0	./sys/devices/virtual/block/loop5/mq/0/cpu0
+0	./sys/devices/virtual/block/loop5/mq/0
+0	./sys/devices/virtual/block/loop5/mq
+0	./sys/devices/virtual/block/loop5/queue
+0	./sys/devices/virtual/block/loop5/trace
+0	./sys/devices/virtual/block/loop5/holders
+0	./sys/devices/virtual/block/loop5/slaves
+0	./sys/devices/virtual/block/loop5/integrity
+0	./sys/devices/virtual/block/loop5
+0	./sys/devices/virtual/block/nbd7/power
+0	./sys/devices/virtual/block/nbd7/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd7/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd7/mq/0
+0	./sys/devices/virtual/block/nbd7/mq
+0	./sys/devices/virtual/block/nbd7/queue
+0	./sys/devices/virtual/block/nbd7/trace
+0	./sys/devices/virtual/block/nbd7/holders
+0	./sys/devices/virtual/block/nbd7/slaves
+0	./sys/devices/virtual/block/nbd7/integrity
+0	./sys/devices/virtual/block/nbd7
+0	./sys/devices/virtual/block/nbd10/power
+0	./sys/devices/virtual/block/nbd10/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd10/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd10/mq/0
+0	./sys/devices/virtual/block/nbd10/mq
+0	./sys/devices/virtual/block/nbd10/queue
+0	./sys/devices/virtual/block/nbd10/trace
+0	./sys/devices/virtual/block/nbd10/holders
+0	./sys/devices/virtual/block/nbd10/slaves
+0	./sys/devices/virtual/block/nbd10/integrity
+0	./sys/devices/virtual/block/nbd10
+0	./sys/devices/virtual/block/loop3/power
+0	./sys/devices/virtual/block/loop3/mq/0/cpu1
+0	./sys/devices/virtual/block/loop3/mq/0/cpu0
+0	./sys/devices/virtual/block/loop3/mq/0
+0	./sys/devices/virtual/block/loop3/mq
+0	./sys/devices/virtual/block/loop3/queue
+0	./sys/devices/virtual/block/loop3/trace
+0	./sys/devices/virtual/block/loop3/holders
+0	./sys/devices/virtual/block/loop3/slaves
+0	./sys/devices/virtual/block/loop3/integrity
+0	./sys/devices/virtual/block/loop3
+0	./sys/devices/virtual/block/nbd5/power
+0	./sys/devices/virtual/block/nbd5/mq/0/cpu1
+0	./sys/devices/virtual/block/nbd5/mq/0/cpu0
+0	./sys/devices/virtual/block/nbd5/mq/0
+0	./sys/devices/virtual/block/nbd5/mq
+0	./sys/devices/virtual/block/nbd5/queue
+0	./sys/devices/virtual/block/nbd5/trace
+0	./sys/devices/virtual/block/nbd5/holders
+0	./sys/devices/virtual/block/nbd5/slaves
+0	./sys/devices/virtual/block/nbd5/integrity
+0	./sys/devices/virtual/block/nbd5
+0	./sys/devices/virtual/block
+0	./sys/devices/virtual/dmi/id/power
+0	./sys/devices/virtual/dmi/id
+0	./sys/devices/virtual/dmi
+0	./sys/devices/virtual/input/mice/power
+0	./sys/devices/virtual/input/mice
+0	./sys/devices/virtual/input
+0	./sys/devices/virtual/msr/msr1/power
+0	./sys/devices/virtual/msr/msr1
+0	./sys/devices/virtual/msr/msr0/power
+0	./sys/devices/virtual/msr/msr0
+0	./sys/devices/virtual/msr
+0	./sys/devices/virtual/vc/vcsa1/power
+0	./sys/devices/virtual/vc/vcsa1
+0	./sys/devices/virtual/vc/vcs/power
+0	./sys/devices/virtual/vc/vcs
+0	./sys/devices/virtual/vc/vcsa/power
+0	./sys/devices/virtual/vc/vcsa
+0	./sys/devices/virtual/vc/vcs1/power
+0	./sys/devices/virtual/vc/vcs1
+0	./sys/devices/virtual/vc
+0	./sys/devices/virtual
+0	./sys/devices/tracepoint/power
+0	./sys/devices/tracepoint
+0	./sys/devices/msr/power
+0	./sys/devices/msr/events
+0	./sys/devices/msr/format
+0	./sys/devices/msr
+0	./sys/devices
+0	./sys/power
+0	./sys/class/scsi_disk
+0	./sys/class/hwmon
+0	./sys/class/ata_port
+0	./sys/class/i2c-adapter
+0	./sys/class/spi_transport
+0	./sys/class/scsi_generic
+0	./sys/class/ata_device
+0	./sys/class/cpuid
+0	./sys/class/vtconsole
+0	./sys/class/thermal
+0	./sys/class/spi_host
+0	./sys/class/mem
+0	./sys/class/graphics
+0	./sys/class/misc
+0	./sys/class/xt_idletimer
+0	./sys/class/scsi_host
+0	./sys/class/power_supply
+0	./sys/class/pps
+0	./sys/class/pci_bus
+0	./sys/class/nvme
+0	./sys/class/net
+0	./sys/class/virtio-ports
+0	./sys/class/devfreq
+0	./sys/class/cuse
+0	./sys/class/ata_link
+0	./sys/class/tty
+0	./sys/class/bdi
+0	./sys/class/i2c-dev
+0	./sys/class/phy
+0	./sys/class/macvtap
+0	./sys/class/ptp
+0	./sys/class/block
+0	./sys/class/bsg
+0	./sys/class/dmi
+0	./sys/class/input
+0	./sys/class/msr
+0	./sys/class/scsi_device
+0	./sys/class/rtc
+0	./sys/class/vc
+0	./sys/class
+0	./sys/dev/char
+0	./sys/dev/block
+0	./sys/dev
+0	./sys/firmware
+0	./sys/fs/pstore
+0	./sys/fs/9p
+0	./sys/fs/bpf
+0	./sys/fs/cgroup/systemd
+0	./sys/fs/cgroup/pids
+0	./sys/fs/cgroup/hugetlb
+0	./sys/fs/cgroup/net_prio
+0	./sys/fs/cgroup/perf_event
+0	./sys/fs/cgroup/net_cls
+0	./sys/fs/cgroup/freezer
+0	./sys/fs/cgroup/devices
+0	./sys/fs/cgroup/memory
+0	./sys/fs/cgroup/blkio
+0	./sys/fs/cgroup/cpuacct
+0	./sys/fs/cgroup/cpu
+0	./sys/fs/cgroup/cpuset
+0	./sys/fs/cgroup
+0	./sys/fs/fuse/connections
+0	./sys/fs/fuse
+0	./sys/fs/ext4/features
+0	./sys/fs/ext4/sda1
+0	./sys/fs/ext4
+0	./sys/fs/xfs/stats
+0	./sys/fs/xfs
+0	./sys/fs
+0	./sys/bus/clockevents/devices
+0	./sys/bus/clockevents/drivers
+0	./sys/bus/clockevents
+0	./sys/bus/xen/devices
+0	./sys/bus/xen/drivers
+0	./sys/bus/xen
+0	./sys/bus/platform/devices
+0	./sys/bus/platform/drivers/virtio-mmio
+0	./sys/bus/platform/drivers/vesa-framebuffer
+0	./sys/bus/platform/drivers/timeriomem_rng
+0	./sys/bus/platform/drivers/alarmtimer
+0	./sys/bus/platform/drivers/acpi-fan
+0	./sys/bus/platform/drivers/efi-framebuffer
+0	./sys/bus/platform/drivers/pcspkr
+0	./sys/bus/platform/drivers/sm501
+0	./sys/bus/platform/drivers/sata_mv
+0	./sys/bus/platform/drivers/serial8250
+0	./sys/bus/platform/drivers
+0	./sys/bus/platform
+0	./sys/bus/pci_express/devices
+0	./sys/bus/pci_express/drivers/pcie_pme
+0	./sys/bus/pci_express/drivers/pciehp
+0	./sys/bus/pci_express/drivers
+0	./sys/bus/pci_express
+0	./sys/bus/serio/devices
+0	./sys/bus/serio/drivers/serio_raw
+0	./sys/bus/serio/drivers/atkbd
+0	./sys/bus/serio/drivers
+0	./sys/bus/serio
+0	./sys/bus/event_source/devices
+0	./sys/bus/event_source/drivers
+0	./sys/bus/event_source
+0	./sys/bus/pci/slots
+0	./sys/bus/pci/devices
+0	./sys/bus/pci/drivers/vmxnet3
+0	./sys/bus/pci/drivers/pcips2
+0	./sys/bus/pci/drivers/sata_promise
+0	./sys/bus/pci/drivers/sata_svw
+0	./sys/bus/pci/drivers/lpc_ich
+0	./sys/bus/pci/drivers/8250_lpss
+0	./sys/bus/pci/drivers/ahci
+0	./sys/bus/pci/drivers/sata_sis
+0	./sys/bus/pci/drivers/vx855
+0	./sys/bus/pci/drivers/nvme
+0	./sys/bus/pci/drivers/xen-platform-pci
+0	./sys/bus/pci/drivers/ata_piix
+0	./sys/bus/pci/drivers/serial
+0	./sys/bus/pci/drivers/sata_uli
+0	./sys/bus/pci/drivers/pcieport
+0	./sys/bus/pci/drivers/virtio-pci
+0	./sys/bus/pci/drivers/sata_sil
+0	./sys/bus/pci/drivers/pata_sis
+0	./sys/bus/pci/drivers/pci-stub
+0	./sys/bus/pci/drivers/sm501
+0	./sys/bus/pci/drivers/ata_generic
+0	./sys/bus/pci/drivers/sata_nv
+0	./sys/bus/pci/drivers/intel ips
+0	./sys/bus/pci/drivers/vmw_pvscsi
+0	./sys/bus/pci/drivers/sata_mv
+0	./sys/bus/pci/drivers/sata_via
+0	./sys/bus/pci/drivers/shpchp
+0	./sys/bus/pci/drivers/sata_vsc
+0	./sys/bus/pci/drivers/mptspi
+0	./sys/bus/pci/drivers/lpc_sch
+0	./sys/bus/pci/drivers
+0	./sys/bus/pci
+0	./sys/bus/cpu/devices
+0	./sys/bus/cpu/drivers/processor
+0	./sys/bus/cpu/drivers
+0	./sys/bus/cpu
+0	./sys/bus/scsi/devices
+0	./sys/bus/scsi/drivers/sr
+0	./sys/bus/scsi/drivers/sd
+0	./sys/bus/scsi/drivers
+0	./sys/bus/scsi
+0	./sys/bus/clocksource/devices
+0	./sys/bus/clocksource/drivers
+0	./sys/bus/clocksource
+0	./sys/bus/hid/devices
+0	./sys/bus/hid/drivers/hid-generic
+0	./sys/bus/hid/drivers
+0	./sys/bus/hid
+0	./sys/bus/pnp/devices
+0	./sys/bus/pnp/drivers/rtc_cmos
+0	./sys/bus/pnp/drivers/system
+0	./sys/bus/pnp/drivers/serial
+0	./sys/bus/pnp/drivers
+0	./sys/bus/pnp
+0	./sys/bus/usb/devices
+0	./sys/bus/usb/drivers/usbfs
+0	./sys/bus/usb/drivers/usbhid
+0	./sys/bus/usb/drivers/usb
+0	./sys/bus/usb/drivers/hub
+0	./sys/bus/usb/drivers
+0	./sys/bus/usb
+0	./sys/bus/memory/devices
+0	./sys/bus/memory/drivers
+0	./sys/bus/memory
+0	./sys/bus/workqueue/devices
+0	./sys/bus/workqueue/drivers
+0	./sys/bus/workqueue
+0	./sys/bus/virtio/devices
+0	./sys/bus/virtio/drivers/virtio_input
+0	./sys/bus/virtio/drivers/virtio_blk
+0	./sys/bus/virtio/drivers/virtio_net
+0	./sys/bus/virtio/drivers/virtio_rng
+0	./sys/bus/virtio/drivers/virtio_scsi
+0	./sys/bus/virtio/drivers/9pnet_virtio
+0	./sys/bus/virtio/drivers/virtio_balloon
+0	./sys/bus/virtio/drivers/vmw_vsock_virtio_transport
+0	./sys/bus/virtio/drivers/virtio_console
+0	./sys/bus/virtio/drivers/virtio_rproc_serial
+0	./sys/bus/virtio/drivers
+0	./sys/bus/virtio
+0	./sys/bus/container/devices
+0	./sys/bus/container/drivers
+0	./sys/bus/container
+0	./sys/bus/acpi/devices
+0	./sys/bus/acpi/drivers/ac
+0	./sys/bus/acpi/drivers/thermal
+0	./sys/bus/acpi/drivers/sbs
+0	./sys/bus/acpi/drivers/button
+0	./sys/bus/acpi/drivers/hpet
+0	./sys/bus/acpi/drivers/smbus_hc
+0	./sys/bus/acpi/drivers/Atlas ACPI
+0	./sys/bus/acpi/drivers/battery
+0	./sys/bus/acpi/drivers/hardware_error_device
+0	./sys/bus/acpi/drivers/ec
+0	./sys/bus/acpi/drivers
+0	./sys/bus/acpi
+0	./sys/bus/i2c/devices
+0	./sys/bus/i2c/drivers/dummy
+0	./sys/bus/i2c/drivers/wl1273-fm
+0	./sys/bus/i2c/drivers
+0	./sys/bus/i2c
+0	./sys/bus
+0	./sys/module/cpuidle/parameters
+0	./sys/module/cpuidle
+0	./sys/module/pcie_aspm/parameters
+0	./sys/module/pcie_aspm
+0	./sys/module/vxlan/parameters
+0	./sys/module/vxlan
+0	./sys/module/ip_vs/parameters
+0	./sys/module/ip_vs
+0	./sys/module/kernel/parameters
+0	./sys/module/kernel
+0	./sys/module/pstore/parameters
+0	./sys/module/pstore
+0	./sys/module/pci_hotplug/parameters
+0	./sys/module/pci_hotplug
+0	./sys/module/rcupdate/parameters
+0	./sys/module/rcupdate
+0	./sys/module/mousedev/parameters
+0	./sys/module/mousedev
+0	./sys/module/vt/parameters
+0	./sys/module/vt
+0	./sys/module/virtio_blk/parameters
+0	./sys/module/virtio_blk
+0	./sys/module/vmxnet3/drivers
+0	./sys/module/vmxnet3
+0	./sys/module/fscache/parameters
+0	./sys/module/fscache
+0	./sys/module/virtio_net/parameters
+0	./sys/module/virtio_net
+0	./sys/module/processor/parameters
+0	./sys/module/processor
+0	./sys/module/8250/parameters
+0	./sys/module/8250
+0	./sys/module/xen_netfront/parameters
+0	./sys/module/xen_netfront
+0	./sys/module/efivars
+0	./sys/module/sata_promise/drivers
+0	./sys/module/sata_promise
+0	./sys/module/overlay/parameters
+0	./sys/module/overlay
+0	./sys/module/xen_pcifront/parameters
+0	./sys/module/xen_pcifront
+0	./sys/module/pciehp/parameters
+0	./sys/module/pciehp
+0	./sys/module/nf_conntrack_sip/parameters
+0	./sys/module/nf_conntrack_sip
+0	./sys/module/xen_gntalloc/parameters
+0	./sys/module/xen_gntalloc
+0	./sys/module/usbhid/parameters
+0	./sys/module/usbhid/drivers
+0	./sys/module/usbhid
+0	./sys/module/thermal/parameters
+0	./sys/module/thermal
+0	./sys/module/cifs/parameters
+0	./sys/module/cifs
+0	./sys/module/8250_core/parameters
+0	./sys/module/8250_core
+0	./sys/module/hv_storvsc/parameters
+0	./sys/module/hv_storvsc
+0	./sys/module/virtio_mmio/parameters
+0	./sys/module/virtio_mmio
+0	./sys/module/nf_conntrack_snmp/parameters
+0	./sys/module/nf_conntrack_snmp
+0	./sys/module/input_polldev
+0	./sys/module/sata_svw/drivers
+0	./sys/module/sata_svw
+0	./sys/module/dm_bufio/parameters
+0	./sys/module/dm_bufio
+0	./sys/module/fscrypto/parameters
+0	./sys/module/fscrypto
+0	./sys/module/cachefiles/parameters
+0	./sys/module/cachefiles
+0	./sys/module/nf_conntrack_irc/parameters
+0	./sys/module/nf_conntrack_irc
+0	./sys/module/sysrq/parameters
+0	./sys/module/sysrq
+0	./sys/module/oprofile/parameters
+0	./sys/module/oprofile
+0	./sys/module/xfrm_user/notes
+0	./sys/module/xfrm_user/sections
+0	./sys/module/xfrm_user/holders
+0	./sys/module/xfrm_user
+0	./sys/module/ahci/parameters
+0	./sys/module/ahci/drivers
+0	./sys/module/ahci
+0	./sys/module/sata_sis/drivers
+0	./sys/module/sata_sis
+0	./sys/module/hangcheck_timer
+0	./sys/module/pcc_cpufreq
+0	./sys/module/sbs/parameters
+0	./sys/module/sbs
+0	./sys/module/nvme/parameters
+0	./sys/module/nvme/drivers
+0	./sys/module/nvme
+0	./sys/module/ipip/parameters
+0	./sys/module/ipip
+0	./sys/module/vsock
+0	./sys/module/nvme_core/parameters
+0	./sys/module/nvme_core
+0	./sys/module/acpiphp/parameters
+0	./sys/module/acpiphp
+0	./sys/module/nf_conntrack_ftp/parameters
+0	./sys/module/nf_conntrack_ftp
+0	./sys/module/nf_nat_snmp_basic/parameters
+0	./sys/module/nf_nat_snmp_basic
+0	./sys/module/button/parameters
+0	./sys/module/button
+0	./sys/module/8021q
+0	./sys/module/hv_balloon/parameters
+0	./sys/module/hv_balloon
+0	./sys/module/ata_piix/drivers
+0	./sys/module/ata_piix
+0	./sys/module/ip_set/parameters
+0	./sys/module/ip_set
+0	./sys/module/ip_vs_ftp/parameters
+0	./sys/module/ip_vs_ftp
+0	./sys/module/fb/parameters
+0	./sys/module/fb
+0	./sys/module/rng_core/parameters
+0	./sys/module/rng_core
+0	./sys/module/nf_conntrack_ipv4/parameters
+0	./sys/module/nf_conntrack_ipv4
+0	./sys/module/nf_conntrack/parameters
+0	./sys/module/nf_conntrack
+0	./sys/module/hid/parameters
+0	./sys/module/hid
+0	./sys/module/dns_resolver/parameters
+0	./sys/module/dns_resolver
+0	./sys/module/nf_conntrack_tftp/parameters
+0	./sys/module/nf_conntrack_tftp
+0	./sys/module/intel_idle/parameters
+0	./sys/module/intel_idle
+0	./sys/module/cryptomgr/parameters
+0	./sys/module/cryptomgr
+0	./sys/module/842_decompress/parameters
+0	./sys/module/842_decompress
+0	./sys/module/dm_mod/parameters
+0	./sys/module/dm_mod
+0	./sys/module/virtio_balloon/parameters
+0	./sys/module/virtio_balloon
+0	./sys/module/uinput
+0	./sys/module/mptscsih
+0	./sys/module/xen_gntdev/parameters
+0	./sys/module/xen_gntdev
+0	./sys/module/xen_blkfront/parameters
+0	./sys/module/xen_blkfront
+0	./sys/module/ipv6/parameters
+0	./sys/module/ipv6
+0	./sys/module/libata/parameters
+0	./sys/module/libata
+0	./sys/module/libahci/parameters
+0	./sys/module/libahci
+0	./sys/module/xt_recent/parameters
+0	./sys/module/xt_recent
+0	./sys/module/hv_netvsc/parameters
+0	./sys/module/hv_netvsc
+0	./sys/module/fuse/parameters
+0	./sys/module/fuse
+0	./sys/module/spurious/parameters
+0	./sys/module/spurious
+0	./sys/module/module/parameters
+0	./sys/module/module
+0	./sys/module/nf_conntrack_amanda/parameters
+0	./sys/module/nf_conntrack_amanda
+0	./sys/module/xz_dec
+0	./sys/module/loop/parameters
+0	./sys/module/loop
+0	./sys/module/rcutree/parameters
+0	./sys/module/rcutree
+0	./sys/module/efi_pstore/parameters
+0	./sys/module/efi_pstore
+0	./sys/module/sata_uli/drivers
+0	./sys/module/sata_uli
+0	./sys/module/842_compress/parameters
+0	./sys/module/842_compress
+0	./sys/module/printk/parameters
+0	./sys/module/printk
+0	./sys/module/sparse_keymap
+0	./sys/module/nf_conntrack_sane/parameters
+0	./sys/module/nf_conntrack_sane
+0	./sys/module/sata_sil/parameters
+0	./sys/module/sata_sil/drivers
+0	./sys/module/sata_sil
+0	./sys/module/mptbase/parameters
+0	./sys/module/mptbase
+0	./sys/module/workqueue/parameters
+0	./sys/module/workqueue
+0	./sys/module/dm_thin_pool/parameters
+0	./sys/module/dm_thin_pool
+0	./sys/module/pata_sis/drivers
+0	./sys/module/pata_sis
+0	./sys/module/sr_mod/parameters
+0	./sys/module/sr_mod
+0	./sys/module/usbcore/parameters
+0	./sys/module/usbcore/drivers
+0	./sys/module/usbcore
+0	./sys/module/ata_generic/drivers
+0	./sys/module/ata_generic
+0	./sys/module/sata_nv/parameters
+0	./sys/module/sata_nv/drivers
+0	./sys/module/sata_nv
+0	./sys/module/acpi_cpufreq/parameters
+0	./sys/module/acpi_cpufreq
+0	./sys/module/nf_conntrack_netbios_ns/parameters
+0	./sys/module/nf_conntrack_netbios_ns
+0	./sys/module/sg/parameters
+0	./sys/module/sg
+0	./sys/module/firmware_class/parameters
+0	./sys/module/firmware_class
+0	./sys/module/block/parameters
+0	./sys/module/block
+0	./sys/module/battery/parameters
+0	./sys/module/battery
+0	./sys/module/vmw_pvscsi/parameters
+0	./sys/module/vmw_pvscsi/drivers
+0	./sys/module/vmw_pvscsi
+0	./sys/module/ip6_tunnel/parameters
+0	./sys/module/ip6_tunnel
+0	./sys/module/sata_mv/parameters
+0	./sys/module/sata_mv/drivers
+0	./sys/module/sata_mv
+0	./sys/module/sata_via/drivers
+0	./sys/module/sata_via
+0	./sys/module/keyboard/parameters
+0	./sys/module/keyboard
+0	./sys/module/nf_conntrack_h323/parameters
+0	./sys/module/nf_conntrack_h323
+0	./sys/module/nbd/parameters
+0	./sys/module/nbd
+0	./sys/module/xfrm_algo/notes
+0	./sys/module/xfrm_algo/sections
+0	./sys/module/xfrm_algo/holders
+0	./sys/module/xfrm_algo
+0	./sys/module/bridge
+Mem total:2047132 anon:237808 map:129980 free:367476
+ slab:72852 buf:6792 cache:1334164 dirty:28 write:0
+Swap total:1048572 free:1048572
+  PID   VSZ VSZRW^^^RSS^(SHR) DIRTY (SHR) STACK COMMAND
+    1  1312   188   640   516    60     0   132 sh
+   15  1304   180   636   516    56     0   132 top
+/ # fg
+sh: fg: No current job
+/ # fg n
+sh: fg: n: no such job
+/ # exit
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS               NAMES
+cc18d4b92ddb        busybox             "sh"                     17 minutes ago      Exited (2) 12 seconds ago                          hardcore_matsumoto
+6cbca975a919        busybox             "sh"                     30 minutes ago      Exited (127) 17 minutes ago                        naughty_booth
+5ef2084d2f5c        busybox             "echo 'hello from bu…"   About an hour ago   Exited (0) About an hour ago                       stupefied_dijkstra
+7b8144aa5fb1        busybox             "sh"                     About an hour ago   Exited (0) About an hour ago                       hopeful_jackson
+28b483d0c16d        hello-world         "/hello"                 3 hours ago         Exited (0) 3 hours ago                             eloquent_pike
+Gauravs-MacBook-Pro-2:Github calel9$ docker run --help
+
+Usage:	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run a command in a new container
+
+Options:
+      --add-host list                  Add a custom host-to-IP mapping (host:ip)
+  -a, --attach list                    Attach to STDIN, STDOUT or STDERR
+      --blkio-weight uint16            Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+      --blkio-weight-device list       Block IO weight (relative device weight) (default [])
+      --cap-add list                   Add Linux capabilities
+      --cap-drop list                  Drop Linux capabilities
+      --cgroup-parent string           Optional parent cgroup for the container
+      --cidfile string                 Write the container ID to the file
+      --cpu-period int                 Limit CPU CFS (Completely Fair Scheduler) period
+      --cpu-quota int                  Limit CPU CFS (Completely Fair Scheduler) quota
+      --cpu-rt-period int              Limit CPU real-time period in microseconds
+      --cpu-rt-runtime int             Limit CPU real-time runtime in microseconds
+  -c, --cpu-shares int                 CPU shares (relative weight)
+      --cpus decimal                   Number of CPUs
+      --cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
+      --cpuset-mems string             MEMs in which to allow execution (0-3, 0,1)
+  -d, --detach                         Run container in background and print container ID
+      --detach-keys string             Override the key sequence for detaching a container
+      --device list                    Add a host device to the container
+      --device-cgroup-rule list        Add a rule to the cgroup allowed devices list
+      --device-read-bps list           Limit read rate (bytes per second) from a device (default [])
+      --device-read-iops list          Limit read rate (IO per second) from a device (default [])
+      --device-write-bps list          Limit write rate (bytes per second) to a device (default [])
+      --device-write-iops list         Limit write rate (IO per second) to a device (default [])
+      --disable-content-trust          Skip image verification (default true)
+      --dns list                       Set custom DNS servers
+      --dns-option list                Set DNS options
+      --dns-search list                Set custom DNS search domains
+      --domainname string              Container NIS domain name
+      --entrypoint string              Overwrite the default ENTRYPOINT of the image
+  -e, --env list                       Set environment variables
+      --env-file list                  Read in a file of environment variables
+      --expose list                    Expose a port or a range of ports
+      --gpus gpu-request               GPU devices to add to the container ('all' to pass all GPUs)
+      --group-add list                 Add additional groups to join
+      --health-cmd string              Command to run to check health
+      --health-interval duration       Time between running the check (ms|s|m|h) (default 0s)
+      --health-retries int             Consecutive failures needed to report unhealthy
+      --health-start-period duration   Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
+      --health-timeout duration        Maximum time to allow one check to run (ms|s|m|h) (default 0s)
+      --help                           Print usage
+  -h, --hostname string                Container host name
+      --init                           Run an init inside the container that forwards signals and reaps processes
+  -i, --interactive                    Keep STDIN open even if not attached
+      --ip string                      IPv4 address (e.g., 172.30.100.104)
+      --ip6 string                     IPv6 address (e.g., 2001:db8::33)
+      --ipc string                     IPC mode to use
+      --isolation string               Container isolation technology
+      --kernel-memory bytes            Kernel memory limit
+  -l, --label list                     Set meta data on a container
+      --label-file list                Read in a line delimited file of labels
+      --link list                      Add link to another container
+      --link-local-ip list             Container IPv4/IPv6 link-local addresses
+      --log-driver string              Logging driver for the container
+      --log-opt list                   Log driver options
+      --mac-address string             Container MAC address (e.g., 92:d0:c6:0a:29:33)
+  -m, --memory bytes                   Memory limit
+      --memory-reservation bytes       Memory soft limit
+      --memory-swap bytes              Swap limit equal to memory plus swap: '-1' to enable unlimited swap
+      --memory-swappiness int          Tune container memory swappiness (0 to 100) (default -1)
+      --mount mount                    Attach a filesystem mount to the container
+      --name string                    Assign a name to the container
+      --network network                Connect a container to a network
+      --network-alias list             Add network-scoped alias for the container
+      --no-healthcheck                 Disable any container-specified HEALTHCHECK
+      --oom-kill-disable               Disable OOM Killer
+      --oom-score-adj int              Tune host's OOM preferences (-1000 to 1000)
+      --pid string                     PID namespace to use
+      --pids-limit int                 Tune container pids limit (set -1 for unlimited)
+      --privileged                     Give extended privileges to this container
+  -p, --publish list                   Publish a container's port(s) to the host
+  -P, --publish-all                    Publish all exposed ports to random ports
+      --read-only                      Mount the container's root filesystem as read only
+      --restart string                 Restart policy to apply when a container exits (default "no")
+      --rm                             Automatically remove the container when it exits
+      --runtime string                 Runtime to use for this container
+      --security-opt list              Security Options
+      --shm-size bytes                 Size of /dev/shm
+      --sig-proxy                      Proxy received signals to the process (default true)
+      --stop-signal string             Signal to stop a container (default "SIGTERM")
+      --stop-timeout int               Timeout (in seconds) to stop a container
+      --storage-opt list               Storage driver options for the container
+      --sysctl map                     Sysctl options (default map[])
+      --tmpfs list                     Mount a tmpfs directory
+  -t, --tty                            Allocate a pseudo-TTY
+      --ulimit ulimit                  Ulimit options (default [])
+  -u, --user string                    Username or UID (format: <name|uid>[:<group|gid>])
+      --userns string                  User namespace to use
+      --uts string                     UTS namespace to use
+  -v, --volume list                    Bind mount a volume
+      --volume-driver string           Optional volume driver for the container
+      --volumes-from list              Mount volumes from the specified container(s)
+  -w, --workdir string                 Working directory inside the container
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                           PORTS               NAMES
+cc18d4b92ddb        busybox             "sh"                     About an hour ago   Exited (2) 47 minutes ago                            hardcore_matsumoto
+6cbca975a919        busybox             "sh"                     About an hour ago   Exited (127) About an hour ago                       naughty_booth
+5ef2084d2f5c        busybox             "echo 'hello from bu…"   2 hours ago         Exited (0) 2 hours ago                               stupefied_dijkstra
+7b8144aa5fb1        busybox             "sh"                     2 hours ago         Exited (0) 2 hours ago                               hopeful_jackson
+28b483d0c16d        hello-world         "/hello"                 3 hours ago         Exited (0) 3 hours ago                               eloquent_pike
+Gauravs-MacBook-Pro-2:Github calel9$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+cc18d4b92ddb291f00d3c7f253c452e5a5027d036a4b34ae6d0c90ae52f733d8
+6cbca975a91957bdd0efee055b88a8011225b3bbe7e1c295b209196dae629e04
+5ef2084d2f5cfd6015fb18dfb28fa7cf4dda9c35cf732b8ceede4fc688d06d80
+7b8144aa5fb18ca882c53904f718e5aab592461c850b8b739dda464a4c42f02f
+28b483d0c16d726759fa38dfaceb8726048249ea7e133dc7b2fe5e7c669bc7d7
+
+Total reclaimed space: 96B
+Gauravs-MacBook-Pro-2:Github calel9$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Gauravs-MacBook-Pro-2:Github calel9$ ls
+Docker	Titanic
+Gauravs-MacBook-Pro-2:Github calel9$ pwd
+/Users/calel9/Documents/Github
+Gauravs-MacBook-Pro-2:Github calel9$ git version
+git version 2.14.3 (Apple Git-98)
+Gauravs-MacBook-Pro-2:Github calel9$ ls
+Docker	Titanic
+Gauravs-MacBook-Pro-2:Github calel9$ cd Docker/
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+Gauravs-MacBook-Pro-2:Docker calel9$ pwd
+/Users/calel9/Documents/Github/Docker
+Gauravs-MacBook-Pro-2:Docker calel9$ docker.txt
+-bash: docker.txt: command not found
+Gauravs-MacBook-Pro-2:Docker calel9$ ls > docker
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+docker
+Gauravs-MacBook-Pro-2:Docker calel9$ ls > docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+docker		docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ cat docker.sh
+docker
+docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+docker		docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+docker		docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ cat docker
+docker
+Gauravs-MacBook-Pro-2:Docker calel9$ history > docker
+Gauravs-MacBook-Pro-2:Docker calel9$ ls
+docker		docker.sh
+Gauravs-MacBook-Pro-2:Docker calel9$ 
